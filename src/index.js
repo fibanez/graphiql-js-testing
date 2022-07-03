@@ -4,32 +4,28 @@ import "./styles.css";
 import "graphiql/graphiql.min.css";
 import GraphiQL from "graphiql";
 
-const URL = "https://swapi-graphql.netlify.com/.netlify/functions/index";
+const URL = "https://appsync.mc1.expo.academy/graphql";
 
 function graphQLFetcher(graphQLParams) {
   return fetch(URL, {
     method: "post",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Authorization: "1" },
     body: JSON.stringify(graphQLParams)
-  }).then(response => response.json());
+  }).then((response) => response.json());
 }
 
 const container = document.getElementById("root");
 
 const defaultQuery = `
-{
-  allFilms {
-    edges {
-      node {
-        id
-        title
-        producers
-        episodeID
-        created
-      }
+query MyQuery {
+  listItemsModel {
+    items {
+      id
+      item
     }
   }
 }
+
 `;
 
 render(

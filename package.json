@@ -1,7 +1,7 @@
 {
-  "name": "graphiql-js-example",
+  "name": "fernando-grapqli-test",
   "version": "1.0.0",
-  "description": "using CRA aka react-scripts with javascript",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
